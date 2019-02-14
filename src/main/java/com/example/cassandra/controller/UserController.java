@@ -1,9 +1,12 @@
 package com.example.cassandra.controller;
 
+import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.example.cassandra.modal.User;
 import com.example.cassandra.repository.UserRepository;
@@ -23,12 +26,13 @@ public class UserController {
 	@ResponseBody
 	public String add() {
 		User user=new User();
-		user.setId(1);
-		user.setName("Ali");
-		user.setAddress("Shenzhen");
-		user.setAge(32);
+		
+		user.setId(6);
+		user.setName("Zain");
+		user.setAddress("Sialkot");
+		user.setAge(18);
 		repository.save(user);
-		return "User Added Succeffully";
+		return "New User  Succeffully";
 	}
 	
 	@RequestMapping ("/allusers")
